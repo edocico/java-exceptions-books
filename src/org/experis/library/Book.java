@@ -13,7 +13,7 @@ public class Book {
 
 
     public void setTitle(String title) throws IllegalArgumentException {
-        if (title.equals(" ")) {
+        if (title.isEmpty()) {
             throw new IllegalArgumentException("title can't be empty string");
         }
         this.title = title;
@@ -27,28 +27,47 @@ public class Book {
     }
 
     public void setAuthor(String author) throws IllegalArgumentException {
-        if (author.equals(" ")) {
+        if (author.isEmpty()) {
             throw new IllegalArgumentException("author can't be empty string");
         }
         this.author = author;
     }
 
     public void setPublisher(String publisher) throws IllegalArgumentException {
-        if (publisher.equals(" ")) {
+        if (publisher.isEmpty()) {
             throw new IllegalArgumentException("publisher can't be void string");
         }
         this.publisher = publisher;
     }
 
+    // getter
+
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getPageNumber() {
+        return pageNumber;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
     // constructor
     public Book(String title, int pageNumber, String author, String publisher) {
-        if (title.equals(" ")) {
+        if (title.isEmpty()) {
             throw new IllegalArgumentException("title can't be a void string");
         } else if (pageNumber <= 0) {
             throw new IllegalArgumentException("page number must be higher than 0");
-        } else if (author.equals(" ")) {
+        } else if (author.isEmpty()) {
             throw new IllegalArgumentException("author can't be empty string");
-        } else if (publisher.equals(" ")) {
+        } else if (publisher.isEmpty()) {
             throw new IllegalArgumentException("publisher can't be void string");
         }
 
