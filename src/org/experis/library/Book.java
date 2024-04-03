@@ -13,7 +13,7 @@ public class Book {
 
 
     public void setTitle(String title) throws IllegalArgumentException {
-        if (title.isEmpty()) {
+        if (title ==null || title.isEmpty()) {
             throw new IllegalArgumentException("title can't be empty string");
         }
         this.title = title;
@@ -27,14 +27,14 @@ public class Book {
     }
 
     public void setAuthor(String author) throws IllegalArgumentException {
-        if (author.isEmpty()) {
+        if (author == null || author.isEmpty()) {
             throw new IllegalArgumentException("author can't be empty string");
         }
         this.author = author;
     }
 
     public void setPublisher(String publisher) throws IllegalArgumentException {
-        if (publisher.isEmpty()) {
+        if (publisher == null || publisher.isEmpty()) {
             throw new IllegalArgumentException("publisher can't be void string");
         }
         this.publisher = publisher;

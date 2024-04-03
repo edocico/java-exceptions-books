@@ -1,5 +1,9 @@
 package org.experis.library;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -59,5 +63,18 @@ public class Main {
 
         // chiudo scanner
         scan.close();
+
+        // creo nuovo file
+
+        File myfile = new File("./");
+
+//        try {
+//            for(Book book : library) {
+//                FileWriter writer = new FileWriter("librarylist.txt");
+//                writer.write(library[i]);
+//            }
+//        }
+
+
     }
 }
