@@ -7,7 +7,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
         Scanner scan = new Scanner(System.in);
         int booksNumber = 0;
         // chiedo all'utente il numero di libri da inserire nel sistema
@@ -61,19 +62,38 @@ public class Main {
 
         }
 
+
+
+        System.out.println(Arrays.toString(library));
+
         // chiudo scanner
         scan.close();
 
+        // scrivo dati su file
+        File bookFile = new File("./resources/books.txt");
+
+       try (FileWriter writer = new FileWriter(bookFile)){
+           for (Book book : library){
+               writer.write(book.toString());
+           }
+       } catch (IOException e){
+           System.out.println("unable to write");
+       }
+
+
+
         // creo nuovo file
-
-        File myfile = new File("./");
-
+//        FileWriter writer = null;
 //        try {
-//            for(Book book : library) {
-//                FileWriter writer = new FileWriter("librarylist.txt");
+//            writer = new FileWriter("librarylist.txt");
+//            for (int i = 0; i < library.length; i++) {
 //                writer.write(library[i]);
 //            }
+//        } catch (IOException e) {
+//            System.out.println(e.getMessage());
 //        }
+
+
 
 
     }

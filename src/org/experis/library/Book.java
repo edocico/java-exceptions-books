@@ -76,4 +76,21 @@ public class Book {
         this.author = author;
         this.publisher = publisher;
     }
+
+    // metodi
+
+
+    @Override
+    public String toString() {
+        return "Book{" + "title='" + title + '\'' + ", pageNumber=" + pageNumber + ", author='" + author + '\'' + ", publisher='" + publisher + '\'' + '}';
+    }
+
+
+    // validatore con metodo
+
+    private void validateStringNotEmpty(String value, String field) throws IllegalArgumentException {
+        if (value == null || value.isEmpty()) {
+            throw new IllegalArgumentException(field + "null or empty");
+        }
+    }
 }
